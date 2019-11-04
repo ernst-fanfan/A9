@@ -8,20 +8,21 @@ import java.text.NumberFormat;
 
 public class SummerStats {
 
-    NumberFormat ft = NumberFormat.getCurrencyInstance();
-    private double [][] chart;
+    NumberFormat ft = NumberFormat.getCurrencyInstance();//format
+    private double [][] chart;//data array
 
-    SummerStats(int newNumEmployees, int newNumYears) {
+    SummerStats(int newNumEmployees, int newNumYears) {//constructor
 
         chart = new double[newNumEmployees] [newNumYears];
 
-        for (int i = 0; i < newNumEmployees; i++) {
+        for (int i = 0; i < newNumEmployees; i++) {//init array
             for (int j = 0; j < newNumYears; j++) {
                 chart[i][j] = (int)(5000 + Math.random()*50001);
             }
         }
     }
 
+    //returns the index of the person having made the most money over the years.
     public int mostMoney() {
         double max = chart[0][0];
         int index = 0;
@@ -36,6 +37,7 @@ public class SummerStats {
         return index;
     }
 
+    //returns the index of the year when the highest salary was earned.
     public int highestSalaryYear () {
         double max = chart[0][0];
         int index = 0;
@@ -50,6 +52,7 @@ public class SummerStats {
         return index;
     }
 
+    //returns the total amount of money made by a specific person
     public double totalEarnings(int personIndex) {
         double total = 0;
         for (int i = 0; i < chart.length; i++) {
@@ -60,6 +63,7 @@ public class SummerStats {
         return total;
     }
 
+    //returns the total amount of money made by all the employees over the years.
     public double allEarnings() {
 
         double total = 0;
@@ -71,6 +75,8 @@ public class SummerStats {
         }
         return total;
     }
+
+    //returns the index of the person who made the highest salary in a given year
     public int highestSalaryPerson(int yearIndex) {
         double max = 0;
         int index = 0;
@@ -87,6 +93,7 @@ public class SummerStats {
         return index;
     }
 
+    //return a one-dimensional array of the average salary for each year.
     public double [] averageSalaryEachYear () {
 
 
@@ -99,6 +106,7 @@ public class SummerStats {
         return averageSalaries;
     }
 
+    //prints the salaries array (employees’ data) in tabular format
     public void printSalaries() {
         ft.setMinimumFractionDigits(0);
 
