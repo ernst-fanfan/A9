@@ -1,3 +1,9 @@
+//Class: CS 5000
+//Term: Fall 2019
+//Name: Ernst Fanfan
+//Instructor: Dr. Haddad
+//Assignment: 9
+//IDE Name: IntelliJ
 import java.util.Scanner;
 
 public class TestHotelRating {
